@@ -1,0 +1,38 @@
+{
+  "class_names": [
+    "Bacterial_Spot",
+    "Early_Blight",
+    "Healthy",
+    "Late_Blight",
+    "Leaf_Mold",
+    "Mosaic_Virus",
+    "Septoria_Leaf_Spot",
+    "Spider_Mites",
+    "Target_Spot",
+    "Yellow_Leaf_Curl_Virus"
+  ],
+  "class_indices": {
+    "Bacterial_Spot": 0,
+    "Early_Blight": 1,
+    "Healthy": 2,
+    "Late_Blight": 3,
+    "Leaf_Mold": 4,
+    "Mosaic_Virus": 5,
+    "Septoria_Leaf_Spot": 6,
+    "Spider_Mites": 7,
+    "Target_Spot": 8,
+    "Yellow_Leaf_Curl_Virus": 9
+  },
+  "label_id": {
+    "Bacterial_Spot": "Bercak Bakteri",
+    "Early_Blight": "Hawar Daun Awal",
+    "Late_Blight": "Hawar Daun Akhir",
+    "Leaf_Mold": "Embun Jamur Daun",
+    "Septoria_Leaf_Spot": "Bercak Daun Septoria",
+    "Spider_Mites": "Tungau Laba-laba",
+    "Target_Spot": "Bercak Target",
+    "Yellow_Leaf_Curl_Virus": "Virus Keriting Daun Kuning",
+    "Mosaic_Virus": "Virus Mosaik",
+    "Healthy": "Sehat"
+  }
+}
