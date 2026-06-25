@@ -46,6 +46,24 @@ with open("class_names.json", "r", encoding="utf-8") as f:
 
 print(class_names["class_names"])
 
+def GradCam(x, model, idx, img_rgb) :
+    heatmap, _ = make_gradcam_heatmap(
+        x,
+        model,
+        pred_index=idx
+    )
+
+    gradcam_rgb = overlay_heatmap(
+        img_rgb,
+        heatmap
+    )
+
+    gradcam_bgr = cv2.cvtColor(
+        gradcam_rgb,
+        cv2.COLOR_RGB2BGR
+    )
+
+    return gradcam_bgr
 
 @app.get("/")
 def home():
@@ -91,21 +109,7 @@ async def predict(file: UploadFile = File(...)):
         )
 
         # GradCAM
-        heatmap, _ = make_gradcam_heatmap(
-            x,
-            model,
-            pred_index=idx
-        )
-
-        gradcam_rgb = overlay_heatmap(
-            img_rgb,
-            heatmap
-        )
-
-        gradcam_bgr = cv2.cvtColor(
-            gradcam_rgb,
-            cv2.COLOR_RGB2BGR
-        )
+        gradcam_bgr = GradCam(x, model, idx, img_rgb)
 
         # Save GradCAM locally
         filename = f"{uuid.uuid4()}.png"
