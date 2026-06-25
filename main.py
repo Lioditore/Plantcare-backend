@@ -18,6 +18,9 @@ import uuid
 
 app = FastAPI()
 
+print("ENV URL =", repr(os.getenv("SUPABASE_URL")))
+print("ENV KEY =", repr(os.getenv("SUPABASE_SECRET_KEY")))
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
