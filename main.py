@@ -110,6 +110,7 @@ async def predict(file: UploadFile = File(...)):
 
         # GradCAM
         #gradcam_bgr = GradCam(x, model, idx, img_rgb)
+        grandcam_bgr = img_rgb
 
         # Save GradCAM locally
         filename = f"{uuid.uuid4()}.png"
